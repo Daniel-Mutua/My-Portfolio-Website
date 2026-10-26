@@ -1,47 +1,53 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects — Daniel Mutua</title>
+  <title>Contact — Daniel Mutua</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Add EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
   <style>
+    /* ---------------- BODY ---------------- */
     body {
-      margin: 0;
-      padding: 0;
-      font-family: "Poppins", sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: #000000;
       color: #c5c6c7;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
       overflow-x: hidden;
     }
 
-    h1 {
-      text-align: center;
-      color: #ffffff;
-      font-family: "Instrument Serif", serif;
-      margin-top: 100px;
-      font-size: 2.8rem;
+    /* HIDE SCROLLBAR COMPLETELY */
+    html, body {
+      overflow: hidden;
+      height: 100%;
     }
 
-    .subtitle {
-      text-align: center;
-      color: #cccccc;
-      margin-bottom: 50px;
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0 20px;
-      line-height: 1.6;
+    body {
+      overflow-y: auto;
     }
 
-    /* NAVBAR */
+    ::-webkit-scrollbar {
+      display: none;
+      width: 0;
+      height: 0;
+      background: transparent;
+    }
+
+    * {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    /* NAVBAR - WITH ALL LINKS */
     nav {
       width: 100%;
-      background: rgba(17,17,17,0.95);
+      background: rgba(0,0,0,0.95);
+      backdrop-filter: none;
       border-bottom: 1px solid #444444;
       position: fixed;
       top: 0;
@@ -51,12 +57,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: none;
       box-sizing: border-box;
     }
 
     nav .logo {
+      font-family: 'Instrument Serif', serif;
       color: #ffffff;
-      font-family: "Instrument Serif", serif;
       font-size: 1.3rem;
       font-weight: 600;
       letter-spacing: 1px;
@@ -94,23 +101,24 @@
       transition: all 0.3s ease;
       padding: 5px 8px;
       border-radius: 4px;
-      border: 1px solid #666666;
+      border: 1px solid transparent;
       display: inline-block;
-      background: #181818;
     }
 
     nav ul li a:hover {
       color: #000000;
       background-color: #b3b3b3;
+      box-shadow: none;
       text-shadow: none;
       border: 1px solid #b3b3b3;
     }
 
+    /* Active link styling */
     nav ul li a.active {
-  color: #ffffff;
-  border-bottom: 1px solid #666666;
-  padding-bottom: 3px;
-}
+      color: #ffffff;
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 3px;
+    }
 
     .menu-toggle {
       display: none;
