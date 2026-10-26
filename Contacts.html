@@ -5,14 +5,15 @@
   <title>Contact — Daniel Mutua</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
   <!-- Add EmailJS SDK -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  
+
   <style>
     /* ---------------- BODY ---------------- */
     body {
       font-family: 'Poppins', sans-serif;
-      background: #0b0c10;
+      background: #000000;
       color: #c5c6c7;
       margin: 0;
       padding: 0;
@@ -25,18 +26,18 @@
       overflow: hidden;
       height: 100%;
     }
-    
+
     body {
       overflow-y: auto;
     }
-    
+
     ::-webkit-scrollbar {
       display: none;
       width: 0;
       height: 0;
       background: transparent;
     }
-    
+
     * {
       scrollbar-width: none;
       -ms-overflow-style: none;
@@ -45,9 +46,9 @@
     /* NAVBAR - WITH ALL LINKS */
     nav {
       width: 100%;
-      background: rgba(11,12,16,0.97);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,255,247,0.3);
+      background: rgba(0,0,0,0.95);
+      backdrop-filter: none;
+      border-bottom: 1px solid #444444;
       position: fixed;
       top: 0;
       left: 0;
@@ -56,12 +57,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 0 20px rgba(0,255,247,0.3);
+      box-shadow: none;
       box-sizing: border-box;
     }
 
     nav .logo {
-      color: #00fff7;
+      font-family: 'Instrument Serif', serif;
+      color: #ffffff;
       font-size: 1.3rem;
       font-weight: 600;
       letter-spacing: 1px;
@@ -92,7 +94,7 @@
     }
 
     nav ul li a {
-      color: #00fff7;
+      color: #ffffff;
       text-decoration: none;
       font-size: 0.92rem;
       font-weight: 500;
@@ -104,24 +106,24 @@
     }
 
     nav ul li a:hover {
-      color: #0b0c10;
-      background-color: #00fff7;
-      box-shadow: 0 0 8px rgba(0,255,247,0.7);
+      color: #000000;
+      background-color: #b3b3b3;
+      box-shadow: none;
       text-shadow: none;
-      border: 1px solid #00fff7;
+      border: 1px solid #b3b3b3;
     }
 
     /* Active link styling */
     nav ul li a.active {
-      color: #00fff7;
-      border-bottom: 2px solid #00fff7;
+      color: #ffffff;
+      border-bottom: 2px solid #ffffff;
       padding-bottom: 3px;
     }
 
     /* Mobile menu toggle */
     .menu-toggle {
       display: none;
-      color: #00fff7;
+      color: #ffffff;
       font-size: 1.5rem;
       cursor: pointer;
       background: none;
@@ -134,18 +136,19 @@
       max-width: 700px;
       margin: 90px auto 40px auto;
       padding: 30px;
-      background: rgba(31,40,51,0.95);
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(0,255,247,0.2);
-      border: 1px solid rgba(0,255,247,0.2);
-      backdrop-filter: blur(5px);
+      background: rgba(17,17,17,0.75);
+      border-radius: 8px;
+      box-shadow: none;
+      border: 1px solid #444444;
+      backdrop-filter: none;
       text-align: center;
       box-sizing: border-box;
     }
 
     .container h2 {
+      font-family: Georgia, serif;
       font-size: 2.2rem;
-      color: #00fff7;
+      color: #ffffff;
       margin-bottom: 20px;
     }
 
@@ -157,13 +160,13 @@
 
     /* MESSAGE FORM CONTAINER */
     .message-container {
-      background: #1f2833;
+      background: rgba(17,17,17,0.75);
       padding: 50px 30px;
-      border-radius: 12px;
+      border-radius: 8px;
       max-width: 500px;
       height: 430px;
       margin: 0 auto 80px auto;
-      box-shadow: 0 0 20px rgba(0,255,247,0.3);
+      box-shadow: none;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -183,7 +186,7 @@
       padding: 15px;
       border-radius: 8px;
       border: none;
-      background: #0b0c10;
+      background: #000000;
       color: #c5c6c7;
       font-size: 1rem;
       resize: none;
@@ -191,15 +194,15 @@
 
     .contact-form input:focus,
     .contact-form textarea:focus {
-      outline: 2px solid #00fff7;
+      outline: 2px solid #b3b3b3;
     }
 
     .contact-form button {
       padding: 15px 30px;
       border: none;
       border-radius: 8px;
-      background: #00fff7;
-      color: #0b0c10;
+      background: #b3b3b3;
+      color: #000000;
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
@@ -207,7 +210,7 @@
     }
 
     .contact-form button:hover {
-      background: #0ff;
+      background: #999999;
     }
 
     /* Style for loading state */
@@ -247,7 +250,7 @@
 
     .contact-method i {
       font-size: 3.5rem;
-      color: #00fff7;
+      color: #ffffff;
       margin-bottom: 10px;
       transition: 0.3s;
       cursor: pointer;
@@ -263,8 +266,8 @@
     .contact-method:hover i,
     .contact-method:hover a,
     .contact-method:hover span {
-      color: #0ff;
-      text-shadow: 0 0 8px #00fff7;
+      color: #b3b3b3;
+      text-shadow: none;
     }
 
     /* COPYRIGHT FOOTER */
@@ -272,10 +275,10 @@
       text-align: center;
       padding: 25px 0;
       margin-top: 50px;
-      border-top: 1px solid rgba(0,255,247,0.2);
+      border-top: 1px solid #444444;
       color: #c5c6c7;
       font-size: 0.9rem;
-      background: rgba(11,12,16,0.9);
+      background: rgba(0,0,0,0.9);
       width: 100%;
     }
 
@@ -285,18 +288,18 @@
     }
 
     .copyright a {
-      color: #00fff7;
+      color: #ffffff;
       text-decoration: none;
       transition: 0.3s;
     }
 
     .copyright a:hover {
-      color: #0ff;
-      text-shadow: 0 0 8px rgba(0,255,247,0.5);
+      color: #b3b3b3;
+      text-shadow: none;
     }
 
     .copyright .heart {
-      color: #ff4757;
+      color: #c5c6c7;
       animation: heartbeat 1.5s infinite;
       display: inline-block;
     }
@@ -322,17 +325,17 @@
     }
 
     .notification.success {
-      background: #1f2833;
-      color: #00fff7;
-      border: 2px solid #00fff7;
-      box-shadow: 0 0 15px rgba(0,255,247,0.3);
+      background: rgba(17,17,17,0.75);
+      color: #ffffff;
+      border: 2px solid #444444;
+      box-shadow: none;
     }
 
     .notification.error {
-      background: #331f1f;
-      color: #ff4747;
-      border: 2px solid #ff4747;
-      box-shadow: 0 0 15px rgba(255, 71, 71, 0.3);
+      background: #181818;
+      color: #c5c6c7;
+      border: 1px solid #666666;
+      box-shadow: none;
     }
 
     @keyframes slideIn {
@@ -350,12 +353,12 @@
       .menu-toggle {
         display: block;
       }
-      
+
       nav {
         padding: 10px 15px;
         flex-wrap: wrap;
       }
-      
+
       nav ul {
         display: none;
         width: 100%;
@@ -363,30 +366,30 @@
         gap: 8px;
         margin-top: 10px;
         padding-top: 10px;
-        border-top: 1px solid rgba(0,255,247,0.2);
+        border-top: 1px solid #444444;
         overflow-x: visible;
       }
-      
+
       nav ul.active {
         display: flex;
       }
-      
+
       nav ul li {
         width: 100%;
       }
-      
+
       nav ul li a {
         display: block;
         text-align: center;
         padding: 10px;
         font-size: 0.95rem;
       }
-      
+
       .container {
         margin: 100px 15px 30px 15px;
         padding: 20px;
       }
-      
+
       .contact-methods {
         gap: 25px;
       }
@@ -394,11 +397,11 @@
       .contact-method i {
         font-size: 3rem;
       }
-      
+
       .contact-method {
         min-width: 80px;
       }
-      
+
       .notification {
         top: 80px;
         right: 10px;
@@ -413,11 +416,11 @@
   <!-- NAVBAR WITH ALL LINKS -->
   <nav>
     <div class="logo">Daniel Mutua</div>
-    
+
     <button class="menu-toggle" id="menuToggle">
       <i class="fas fa-bars"></i>
     </button>
-    
+
     <ul id="navMenu">
       <li><a href="index.html">Home</a></li>
       <li><a href="Skills.html">Skills</a></li>
@@ -483,15 +486,15 @@
     // Form submission handler
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      
+
       const submitBtn = document.getElementById('submitBtn');
       const originalText = submitBtn.textContent;
-      
+
       // Show loading state
       submitBtn.classList.add('loading');
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending';
-      
+
       // Send email using EmailJS
       emailjs.sendForm(
         'service_qch5wsi',     // Replace with your EmailJS Service ID
@@ -501,7 +504,7 @@
       .then(function() {
         // Success
         showNotification('Message sent successfully!', 'success');
-        
+
         // Reset form
         document.getElementById('contactForm').reset();
       }, function(error) {
@@ -522,7 +525,7 @@
       // Remove any existing notifications
       const existingNotifications = document.querySelectorAll('.notification');
       existingNotifications.forEach(notification => notification.remove());
-      
+
       // Create notification
       const notification = document.createElement('div');
       notification.className = `notification ${type}`;
@@ -530,9 +533,9 @@
         <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
         <span>${message}</span>
       `;
-      
+
       document.body.appendChild(notification);
-      
+
       // Remove notification after 5 seconds
       setTimeout(() => {
         notification.style.animation = 'slideOut 0.3s ease';
@@ -548,7 +551,7 @@
     // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
-    
+
     menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
     });
@@ -559,7 +562,7 @@
       link.addEventListener('click', function() {
         navLinks.forEach(l => l.classList.remove('active'));
         this.classList.add('active');
-        
+
         // Close mobile menu after clicking
         if (window.innerWidth <= 768) {
           navMenu.classList.remove('active');
