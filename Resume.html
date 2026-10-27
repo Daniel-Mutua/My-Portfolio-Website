@@ -1,59 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact — Daniel Mutua</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume — Muthui Daniel Mutua</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
-  <!-- Add EmailJS SDK -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
   <style>
-    /* ---------------- BODY ---------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       background: #000000;
-      color: #c5c6c7;
       margin: 0;
       padding: 0;
-      scroll-behavior: smooth;
+      color: #c5c6c7;
       overflow-x: hidden;
+      line-height: 1.6;
     }
 
-    /* HIDE SCROLLBAR COMPLETELY */
-    html, body {
-      overflow: hidden;
-      height: 100%;
-    }
-
-    body {
-      overflow-y: auto;
-    }
-
-    ::-webkit-scrollbar {
-      display: none;
-      width: 0;
-      height: 0;
-      background: transparent;
-    }
-
-    * {
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-
-    /* NAVBAR - WITH ALL LINKS */
-    nav {
+    /* NAVBAR */
+    .navbar {
       width: 100%;
-      background: rgba(0,0,0,0.95);
-      backdrop-filter: none;
+      background: #000000;
       border-bottom: 1px solid #444444;
       position: fixed;
       top: 0;
       left: 0;
       z-index: 9999;
-      padding: 12px 20px;
+      padding: 8px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -61,21 +45,74 @@
       box-sizing: border-box;
     }
 
-    nav .logo {
-      font-family: 'Instrument Serif', serif;
-      color: #ffffff;
-      font-size: 1.3rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      white-space: nowrap;
-      margin-right: 15px;
+    .navbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       flex-shrink: 0;
     }
 
-    nav ul {
+    .navbar-brand {
+      color: #ffffff;
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      margin-right: 0;
+      flex-shrink: 0;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .navbar-brand i {
+      font-size: 0.9rem;
+    }
+
+    /* SOCIAL ICONS */
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .social-icons a {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #181818;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.8rem;
+      border: 1px solid #444444;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: none;
+    }
+
+    .social-icons a::after {
+      display: none;
+    }
+
+    .social-icons a:hover {
+      background: #b3b3b3;
+      color: #000000;
+      border-color: #b3b3b3;
+      transform: translateY(-1px);
+      box-shadow: none;
+    }
+
+    /* NAVIGATION LINKS */
+    #navMenu {
       list-style: none;
       display: flex;
-      gap: 10px;
+      gap: 6px;
       margin: 0;
       padding: 0;
       flex-wrap: nowrap;
@@ -84,43 +121,42 @@
       scrollbar-width: none;
     }
 
-    nav ul::-webkit-scrollbar {
+    #navMenu::-webkit-scrollbar {
       display: none;
     }
 
-    nav ul li {
+    #navMenu li {
       white-space: nowrap;
       flex-shrink: 0;
     }
 
-    nav ul li a {
+    #navMenu a {
       color: #ffffff;
       text-decoration: none;
-      font-size: 0.92rem;
+      font-size: 0.82rem;
       font-weight: 500;
       transition: all 0.3s ease;
-      padding: 5px 8px;
+      padding: 4px 7px;
       border-radius: 4px;
       border: 1px solid transparent;
       display: inline-block;
     }
 
-    nav ul li a:hover {
+    #navMenu a:hover {
       color: #000000;
       background-color: #b3b3b3;
+      border-color: #b3b3b3;
       box-shadow: none;
       text-shadow: none;
-      border: 1px solid #b3b3b3;
     }
 
-    /* Active link styling */
-    nav ul li a.active {
+    #navMenu a.active {
       color: #ffffff;
       border-bottom: 2px solid #ffffff;
-      padding-bottom: 3px;
+      padding-bottom: 2px;
     }
 
-    /* MOBILE MENU */
+    /* MOBILE MENU BUTTON */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -144,7 +180,7 @@
     }
 
     section {
-      background: rgba(17, 17, 17, 0.75);
+      background: rgba(17,17,17,0.75);
       padding: 40px;
       margin-bottom: 40px;
       border-radius: 15px;
@@ -176,7 +212,7 @@
     .hero-section {
       text-align: center;
       padding: 60px 40px;
-      background: rgba(17, 17, 17, 0.75);
+      background: rgba(17,17,17,0.75);
       border-radius: 20px;
       position: relative;
       overflow: hidden;
@@ -194,13 +230,8 @@
     }
 
     @keyframes rotate {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     h1 {
@@ -234,7 +265,7 @@
       gap: 10px;
       font-size: 1rem;
       padding: 10px 20px;
-      background: rgba(17, 17, 17, 0.75);
+      background: rgba(17,17,17,0.75);
       border-radius: 50px;
       border: 1px solid #444444;
       transition: all 0.3s ease;
@@ -289,7 +320,7 @@
     }
 
     .skill-category {
-      background: rgba(17, 17, 17, 0.75);
+      background: rgba(17,17,17,0.75);
       padding: 25px;
       border-radius: 12px;
       border-left: 5px solid #666666;
@@ -322,13 +353,9 @@
       font-size: 1.3rem;
     }
 
-    .skill-category h3 i {
-      color: #ffffff;
-    }
-
     /* PROJECT CARDS */
     .project-card {
-      background: rgba(17, 17, 17, 0.75);
+      background: rgba(17,17,17,0.75);
       padding: 25px;
       border-radius: 12px;
       margin: 20px 0;
@@ -345,12 +372,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.05),
-        transparent
-      );
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
       transition: 0.5s;
     }
 
@@ -374,7 +396,6 @@
       font-weight: 600;
       padding: 8px 20px;
       background: #181818;
-      border: 1px solid #444444;
       border-radius: 6px;
       transition: all 0.3s ease;
     }
@@ -382,7 +403,6 @@
     .project-link:hover {
       background: #b3b3b3;
       color: #000000;
-      border-color: #b3b3b3;
       transform: translateX(5px);
     }
 
@@ -390,7 +410,7 @@
     .experience-item {
       margin-bottom: 30px;
       padding-bottom: 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
       position: relative;
     }
 
@@ -445,10 +465,9 @@
       text-decoration: none;
       border-radius: 10px;
       font-weight: 700;
-      font-family: 'Poppins', sans-serif;
       font-size: 1.1rem;
       transition: all 0.3s ease;
-      border: 1px solid #666666;
+      border: 1px solid #444444;
       cursor: pointer;
       position: relative;
       overflow: hidden;
@@ -462,12 +481,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.08),
-        transparent
-      );
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
       transition: 0.5s;
       z-index: -1;
     }
@@ -477,10 +491,10 @@
     }
 
     .download-btn:hover {
-      color: #000000;
       background: #b3b3b3;
+      color: #000000;
       border-color: #b3b3b3;
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       box-shadow: none;
     }
 
@@ -491,7 +505,7 @@
       color: #cccccc;
       border-top: 1px solid #444444;
       margin-top: 60px;
-      background: rgba(17, 17, 17, 0.75);
+      background: rgba(17,17,17,0.75);
     }
 
     footer p {
@@ -507,10 +521,10 @@
 
       #navMenu {
         position: fixed;
-        top: 60px;
+        top: 48px;
         left: 0;
         right: 0;
-        background: rgba(17, 17, 17, 0.98);
+        background: rgba(17,17,17,0.95);
         flex-direction: column;
         padding: 15px;
         border-bottom: 1px solid #666666;
@@ -534,13 +548,12 @@
       }
 
       #navMenu a {
-        padding: 12px;
+        padding: 10px;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
         display: block;
         width: 100%;
-        font-size: 0.95rem;
-        box-sizing: border-box;
+        font-size: 0.85rem;
       }
 
       #navMenu a:last-child {
@@ -577,7 +590,6 @@
       .contact-info span {
         width: 100%;
         justify-content: center;
-        box-sizing: border-box;
       }
 
       .skills-grid {
@@ -589,20 +601,19 @@
       }
     }
 
-    /* SMALL MOBILE LAYOUT */
     @media (max-width: 480px) {
       .navbar-brand span {
-        font-size: 1.2rem;
+        font-size: 1.05rem;
       }
 
       .social-icons a {
-        width: 32px;
-        height: 32px;
-        font-size: 0.9rem;
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
       }
 
       .navbar {
-        padding: 10px 15px;
+        padding: 8px 15px;
       }
     }
 
@@ -626,13 +637,12 @@
 
       section {
         box-shadow: none;
-        border: 1px solid #dddddd;
+        border: 1px solid #ddd;
         break-inside: avoid;
       }
     }
   </style>
 </head>
-
 <body>
 
   <!-- NAVBAR -->
@@ -647,7 +657,6 @@
         <a href="https://www.linkedin.com/in/muthuimutua01" target="_blank" title="LinkedIn">
           <i class="fab fa-linkedin-in"></i>
         </a>
-
         <a href="https://github.com/Daniel-Mutua" target="_blank" title="GitHub">
           <i class="fab fa-github"></i>
         </a>
@@ -675,22 +684,17 @@
     <!-- HEADER SECTION -->
     <section id="header" class="hero-section">
       <h1>MUTHUI DANIEL MUTUA</h1>
-
-      <p class="title">
-        Information Technology Student | Cybersecurity Enthusiast | IoT Developer
-      </p>
+      <p class="title">Information Technology Student | Cybersecurity Enthusiast | IoT Developer</p>
 
       <div class="contact-info">
         <span>
           <i class="fas fa-phone"></i>
           +254 758 010 300
         </span>
-
         <span>
           <i class="fas fa-envelope"></i>
           muthuimutua00@gmail.com
         </span>
-
         <span>
           <i class="fas fa-map-marker-alt"></i>
           Nairobi, Kenya
@@ -701,13 +705,7 @@
     <!-- SUMMARY SECTION -->
     <section id="summary">
       <h2>SUMMARY</h2>
-
-      <p>
-        Innovative Information Technology student with strong foundations in Cybersecurity,
-        Networking, and IoT. Passionate about building secure systems and developing efficient
-        real-world solutions. Seeking opportunities to apply technical skills in cybersecurity
-        and IoT development while contributing to innovative projects.
-      </p>
+      <p>Innovative Information Technology student with strong foundations in Cybersecurity, Networking, and IoT. Passionate about building secure systems and developing efficient real‑world solutions. Seeking opportunities to apply technical skills in cybersecurity and IoT development while contributing to innovative projects.</p>
     </section>
 
     <!-- EXPERIENCE SECTION -->
@@ -716,10 +714,7 @@
 
       <div class="experience-item">
         <h3>Volunteer Assessor | President's Award Kenya (PA-K)</h3>
-        <p class="date">
-          <i class="far fa-calendar"></i> 2022 - Present
-        </p>
-
+        <p class="date"><i class="far fa-calendar"></i> 2022 - Present</p>
         <ul>
           <li>Assessed and mentored over 50 youth participants in skill development programs</li>
           <li>Collaborated with team members to organize community service initiatives impacting 200+ community members</li>
@@ -729,10 +724,7 @@
 
       <div class="experience-item">
         <h3>Sound Engineer | Kabarak University Christian Union</h3>
-        <p class="date">
-          <i class="far fa-calendar"></i> 2023 - Present
-        </p>
-
+        <p class="date"><i class="far fa-calendar"></i> 2023 - Present</p>
         <ul>
           <li>Managed audio systems for weekly services and special events with 500+ attendees</li>
           <li>Trained 10+ team members on sound equipment operation and maintenance</li>
@@ -742,10 +734,7 @@
 
       <div class="experience-item">
         <h3>KUSSA Caucus Representative | School of Science</h3>
-        <p class="date">
-          <i class="far fa-calendar"></i> 2024 - Present
-        </p>
-
+        <p class="date"><i class="far fa-calendar"></i> 2024 - Present</p>
         <ul>
           <li>Represented 200+ IT students in university governance meetings</li>
           <li>Advocated for improved laboratory facilities and updated curriculum</li>
@@ -754,7 +743,7 @@
       </div>
     </section>
 
-    <!-- TECHNICAL SKILLS SECTION -->
+    <!-- SKILLS SECTION -->
     <section id="skills">
       <h2>TECHNICAL SKILLS</h2>
 
@@ -787,60 +776,32 @@
 
       <div class="project-card">
         <h3>Acoustic Bee Monitoring & Alert System – ESP32</h3>
-
-        <p>
-          Real-time bee monitoring prototype with sound sensor integration, live dashboard
-          visualization, GSM/SIM900 SMS alerts, and SMTP email notifications. System includes
-          threshold configuration and historical data logging.
-        </p>
-
-        <a href="https://github.com/Daniel-Mutua/Acoustic-Bee-Monitoring-System"
-           target="_blank" class="project-link">
+        <p>Real-time bee monitoring prototype with sound sensor integration, live dashboard visualization, GSM/SIM900 SMS alerts, and SMTP email notifications. System includes threshold configuration and historical data logging.</p>
+        <a href="https://github.com/Daniel-Mutua/Acoustic-Bee-Monitoring-System" target="_blank" class="project-link">
           <i class="fab fa-github"></i> View on GitHub →
         </a>
       </div>
 
       <div class="project-card">
         <h3>Cybersecurity Practice Lab (Kali Linux)</h3>
-
-        <p>
-          Performed comprehensive security assessments including network scanning with Nmap,
-          service enumeration, packet inspection with Wireshark, and penetration testing exercises.
-          Documented vulnerabilities and mitigation strategies.
-        </p>
-
-        <a href="https://github.com/muthuimutua/cybersecurity-lab"
-           target="_blank" class="project-link">
+        <p>Performed comprehensive security assessments including network scanning with Nmap, service enumeration, packet inspection with Wireshark, and penetration testing exercises. Documented vulnerabilities and mitigation strategies.</p>
+        <a href="https://github.com/muthuimutua/cybersecurity-lab" target="_blank" class="project-link">
           <i class="fab fa-github"></i> View Lab Reports →
         </a>
       </div>
 
       <div class="project-card">
-        <h3>Wi-Fi Web Server for IoT Device Control</h3>
-
-        <p>
-          Hosted embedded HTML page on ESP32 enabling remote control of appliances via web
-          interface. Implemented secure authentication, real-time status updates, and responsive
-          design for mobile access.
-        </p>
-
-        <a href="https://github.com/Daniel-Mutua/Arduino_Email_SMTP_Testing"
-           target="_blank" class="project-link">
+        <h3>Wi‑Fi Web Server for IoT Device Control</h3>
+        <p>Hosted embedded HTML page on ESP32 enabling remote control of appliances via web interface. Implemented secure authentication, real-time status updates, and responsive design for mobile access.</p>
+        <a href="https://github.com/Daniel-Mutua/Arduino_Email_SMTP_Testing" target="_blank" class="project-link">
           <i class="fab fa-github"></i> View on GitHub →
         </a>
       </div>
 
       <div class="project-card">
         <h3>Portfolio Website with Interactive Resume</h3>
-
-        <p>
-          Designed and developed responsive portfolio website featuring interactive resume,
-          project showcases, and contact form. Implemented modern CSS animations and mobile-first
-          responsive design.
-        </p>
-
-        <a href="https://github.com/Daniel-Mutua/Portfolio-website"
-           target="_blank" class="project-link">
+        <p>Designed and developed responsive portfolio website featuring interactive resume, project showcases, and contact form. Implemented modern CSS animations and mobile-first responsive design.</p>
+        <a href="https://github.com/Daniel-Mutua/Portfolio-website" target="_blank" class="project-link">
           <i class="fab fa-github"></i> View on GitHub →
         </a>
       </div>
@@ -852,48 +813,23 @@
 
       <div class="experience-item">
         <h3>Kabarak University</h3>
-
-        <p class="date">
-          <i class="far fa-calendar"></i> 2022 - Expected Dec 2026
-        </p>
-
+        <p class="date"><i class="far fa-calendar"></i> 2022 - Expected Dec 2026</p>
         <p><strong>Bachelor of Science in Information Technology</strong></p>
-
-        <p>
-          <strong>Relevant Coursework:</strong>
-          Network Security, Web Development, Database Systems, Computer Architecture,
-          Programming Fundamentals, Systems Analysis & Design
-        </p>
+        <p><strong>Relevant Coursework:</strong> Network Security, Web Development, Database Systems, Computer Architecture, Programming Fundamentals, Systems Analysis & Design</p>
       </div>
 
       <div class="experience-item">
-        <h3>USIU-Africa (Cyber Shujaa Program)</h3>
-
-        <p class="date">
-          <i class="far fa-calendar"></i> February 2025
-        </p>
-
+        <h3>USIU‑Africa (Cyber Shujaa Program)</h3>
+        <p class="date"><i class="far fa-calendar"></i> February 2025</p>
         <p><strong>Ethical Hacking & Cybersecurity Fundamentals</strong></p>
-
-        <p>
-          Intensive training program covering penetration testing methodologies, ethical hacking
-          tools, and cybersecurity best practices.
-        </p>
+        <p>Intensive training program covering penetration testing methodologies, ethical hacking tools, and cybersecurity best practices.</p>
       </div>
 
       <div class="experience-item">
         <h3>CISCO Networking Academy, Nairobi</h3>
-
-        <p class="date">
-          <i class="far fa-calendar"></i> Expected August 2025
-        </p>
-
+        <p class="date"><i class="far fa-calendar"></i> Expected August 2025</p>
         <p><strong>Ethical Hacking Certification</strong></p>
-
-        <p>
-          Comprehensive training in network security, vulnerability assessment, and ethical
-          hacking techniques.
-        </p>
+        <p>Comprehensive training in network security, vulnerability assessment, and ethical hacking techniques.</p>
       </div>
     </section>
 
@@ -904,7 +840,6 @@
       <div class="skills-grid">
         <div class="skill-category">
           <h3><i class="fas fa-certificate"></i> Certifications</h3>
-
           <ul>
             <li><strong>CISCO Ethical Hacking</strong> - Expected August 2025</li>
             <li><strong>Cyber Shujaa - Ethical Hacking</strong> - USIU Africa, February 2025</li>
@@ -914,9 +849,8 @@
 
         <div class="skill-category">
           <h3><i class="fas fa-trophy"></i> Leadership</h3>
-
           <ul>
-            <li>Gold Award Holder — President's Award Kenya (PA-K)</li>
+            <li>Gold Award Holder — President's Award Kenya (PA‑K)</li>
             <li>Volunteer/Assessor — President's Award Kenya</li>
             <li>Sound Engineer — Kabarak University Christian Union</li>
             <li>KUSSA Caucus Representative — School of Science Engineering and Technology</li>
@@ -925,7 +859,7 @@
       </div>
     </section>
 
-    <!-- PROFESSIONAL INTERESTS SECTION -->
+    <!-- INTERESTS SECTION -->
     <section id="interests">
       <h2>PROFESSIONAL INTERESTS</h2>
 
@@ -956,11 +890,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>
-      © 2026 Muthui Daniel Mutua |
-      Portfolio: https://daniel-mutua.github.io/Portfolio-website/
-    </p>
-
+    <p>© 2026 Muthui Daniel Mutua | Portfolio: https://daniel-mutua.github.io/Portfolio-website/</p>
     <p>References available upon request | Last Updated: January 2026</p>
   </footer>
 
@@ -993,19 +923,12 @@
       }
     });
 
-    // Navbar background on scroll
+    // Keep navbar black and remove shadow while scrolling
     window.addEventListener('scroll', () => {
       const navbar = document.querySelector('.navbar');
-
-      if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(0, 0, 0, 0.98)';
-        navbar.style.boxShadow = 'none';
-      } else {
-        navbar.style.background = 'rgba(0, 0, 0, 0.95)';
-        navbar.style.boxShadow = 'none';
-      }
+      navbar.style.background = '#000000';
+      navbar.style.boxShadow = 'none';
     });
   </script>
-
 </body>
 </html>
